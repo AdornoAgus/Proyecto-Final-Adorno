@@ -30,31 +30,25 @@ class PostDetailView(generic.DetailView):
         pub_date__lte=timezone.now() 
     )
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['categorias'] = Categoria.objects.all()
-           
-        return context
+
 
 class FeaturedListView(generic.ListView):
     model = Post
-    template_name= 'blogs/resultados.html'
+    template_name = 'blogs/resultados.html'
+    paginate_by = 3 
 
     def get_queryset(self):
-        query = Post.objects.filter(feature=True).filter(
+        query = Post.objects.filter(featured=True).filter(
         pub_date__lte=timezone.now() )
 
         return query
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['categorias'] = Categoria.objects.all()
-           
-        return context
+
 
 class CategoryListView(generic.ListView):
     model = Post
     template_name = 'blogs/resultados.html'
+    paginate_by = 2
 
     def get_queryset(self):
         query = self.request.path.replace('/categorias/','')
@@ -64,15 +58,12 @@ class CategoryListView(generic.ListView):
 
         return post_list
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['categorias'] = Categoria.objects.all()
-           
-        return context        
+   
 
 class SearchListView(generic.ListView):
     model = Post
     template_name = 'blogs/resultados.html'
+    paginate_by = 2
 
     def get_queryset(self):
         query = self.request.GET.get('search')
@@ -86,7 +77,8 @@ class SearchListView(generic.ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['categorias'] = Categoria.objects.all()
+        context['query'] = self.request.GET.get('search')
            
         return context        
-        
+
+
