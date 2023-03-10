@@ -37,8 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
+    'crispy_bootsrap5',
     'users.apps.UsersConfig',
     'blogs.apps.BlogsConfig',
+
 ]
 
 MIDDLEWARE = [
@@ -56,7 +59,7 @@ ROOT_URLCONF = 'base.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR/ 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -131,3 +134,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 AUTH_USER_MODEL = 'users.User'
+
+LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/'
+
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootsrap5'
+CRISPY_TEMPLATE_PACK = 'bootsrap5'
+
+
