@@ -33,7 +33,7 @@
             {% if user.is_authenticated %}
                 <a class="btn btn-outline-primary ms-2" href="{% url 'logout' %}" role="button">Sign Out</a> 
                 <div>
-                    <a class="nav-link" href="#"><span class="text-primary">Perfil</span></a>
+                    <a class="btn btn-outline-primary ms-2" href="#"><span class="text-primary">Perfil</span></a>
                 </div>           
             {% else %}
                 <a class="btn btn-outline-primary ms-2" href="{% url 'login' %}" role="button">Sign In</a>
