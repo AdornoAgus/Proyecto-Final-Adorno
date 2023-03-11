@@ -15,7 +15,7 @@ class UserRegistration(FormView):
         return super(UserRegistration, self).form_valid(form)
     
 class UserLogin(LoginView):
-    template_name = 'users/login.html'
+    template_name = 'register/login.html'
     fields = '__all__'
     redirect_autheticated_user = True
     success_url = reverse_lazy('inicio')
