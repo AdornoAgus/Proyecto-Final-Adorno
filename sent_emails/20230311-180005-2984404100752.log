@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: agustinadorno@yahoo.com.ar
+Date: Sat, 11 Mar 2023 21:00:05 -0000
+Message-ID: <167856840516.5984.9889484195638151060@DESKTOP-1H55FQB>
+
+
+You're receiving this email because you requested a password reset for your user account at 127.0.0.1:8000.
+
+Please go to the following page and choose a new password:
+
+http://127.0.0.1:8000/accounts%20%20/reset/OA/bkwso5-2d31f817d93051bd116af3cf2907950e/
+
+Your username, in case you’ve forgotten: cristia
+
+Thanks for using our site!
+
+The 127.0.0.1:8000 team
+
+
+
+-------------------------------------------------------------------------------

@@ -7,6 +7,8 @@ Alumno: Agustín Andrés Adorno
 
 VERSION  BRANCH V1.6.1
 
+
+
 Descripcion del Proyecto
 Blog dedicado a la publicacion de noticias
 
@@ -33,3 +35,12 @@ Pillow==9.4.0
 sqlparse==0.4.3
 tzdata==2022.7
 
+REQUERIMIENTO PARA ARRANCAR EL PROYECTO:
+
+VIDEO DEMOSTRATIVO: https://youtu.be/Y2m40pZdYQ4
+
+pip install -r requirements.txt
+
+pipenv shell
+
+python manage.py runserver

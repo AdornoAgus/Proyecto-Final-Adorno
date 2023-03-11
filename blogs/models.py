@@ -13,7 +13,7 @@ class Post(models.Model):
     contenido = models.TextField()
     autor = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT)
     categorias = models.ManyToManyField('Categoria')
-    featured = models.BooleanField(default=False)
+    featured = models.BooleanField(default=True)
     imagen = models.ImageField(upload_to='post_imagenes/' ,blank=True, null=True)
     pub_date = models.DateTimeField(default=timezone.now)
 
