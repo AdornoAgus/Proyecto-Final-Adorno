@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from blogs.models import *
-from django.views import generic, View
+from django.views import generic
 from django.utils import timezone
 from django.db.models import Q
 from django.views.generic.detail import SingleObjectMixin
@@ -10,7 +10,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from blogs.forms import *
 from django.urls import reverse
 from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView
-
+from django.views.generic import View
 # Create your views here.
 
 def inicio(request):
