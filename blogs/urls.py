@@ -12,3 +12,4 @@ path('search/',views.SearchListView.as_view(), name='search'),
 path('crear/<slug:slug>', views.CrearPost.as_view(), name='nuevo'),
 
 ]
+
