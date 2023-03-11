@@ -8,6 +8,7 @@ path('',views.inicio),
 path('post/<slug:slug>', views.PostView.as_view(), name='post'),
 path('featured/', views.FeaturedListView.as_view(), name='featured'),
 path('categorias/<slug:slug>',views.CategoryListView.as_view(), name='categorias'),
-path('search/',views.SearchListView.as_view(), name='search')
+path('search/',views.SearchListView.as_view(), name='search'),
+path('crear/<slug:slug>', views.CrearPost.as_view(), name='nuevo'),
 
 ]

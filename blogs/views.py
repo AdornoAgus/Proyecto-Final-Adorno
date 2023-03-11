@@ -9,7 +9,7 @@ from django.views.generic import FormView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from blogs.forms import *
 from django.urls import reverse
-
+from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView
 
 # Create your views here.
 
@@ -123,6 +123,17 @@ class SearchListView(generic.ListView):
         context = super().get_context_data(**kwargs)
         context['query'] = self.request.GET.get('search')
            
-        return context        
+        return context
+
+class CrearPost(LoginRequiredMixin, CreateView):
+    model = Post
+    form_class = PostCreationForm
+    success_url = reverse('inicio')
+    template_name = 'blogs/crear_post.html'
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(CrearPost, self).form_valid(form)
+
 
 
