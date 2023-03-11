@@ -17,12 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-
+from blogs import urls as blogs_urls
+from users import urls as users_urls
 
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('blogs.urls')),
-    path('users/', include('users.urls')),
+    path('', include(blogs_urls, namespace='blog')),
+    path('user/', include(users_urls, namespace='user')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

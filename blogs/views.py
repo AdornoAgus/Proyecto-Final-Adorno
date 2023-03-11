@@ -8,7 +8,7 @@ from django.views.generic.detail import SingleObjectMixin
 from django.views.generic import FormView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from blogs.forms import *
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView
 from django.views.generic import View
 # Create your views here.
@@ -128,7 +128,7 @@ class SearchListView(generic.ListView):
 class CrearPost(LoginRequiredMixin, CreateView):
     model = Post
     form_class = PostCreationForm
-    success_url = reverse('inicio')
+    success_url = reverse_lazy('inicio')
     template_name = 'blogs/crear_post.html'
 
     def form_valid(self, form):
