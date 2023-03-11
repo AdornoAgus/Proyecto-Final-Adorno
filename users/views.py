@@ -1,7 +1,7 @@
 from django.views.generic.edit import FormView
 from django.urls import reverse_lazy
 from users.forms import RegisterForm
-
+from django.contrib.auth.views import LoginView
 
 # Create your views here.
 
@@ -14,3 +14,11 @@ class UserRegistration(FormView):
         form.save()
         return super(UserRegistration, self).form_valid(form)
     
+class UserLogin(LoginView):
+    template_name = 'users/login.html'
+    fields = '__all__'
+    redirect_autheticated_user = True
+    success_url = reverse_lazy('inicio')
+
+    def get_success_url(self):
+        return reverse_lazy('inicio')

@@ -13,7 +13,7 @@
                 <div class="col-md-6">
 
                     <div class="w-100 m-auto text-center">
-                        <form method="post" action="{% url 'login' %}">
+                        <form method="post" action="{% url 'register/login' %}">
                             {% csrf_token %}
                             <h1 class="h3 mb-3 fw-normal">Ingrese sus datos</h1>
                             {{ form |crispy }}
